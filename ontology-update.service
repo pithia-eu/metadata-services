@@ -1,0 +1,18 @@
+[Unit]
+Description=Ontology update service
+Documentation=https://github.com/pithia-eu/ontology/blob/main/README.md
+
+[Service]
+Type=simple
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=30s
+#ExecStartPre=
+ExecStart=/home/ubuntu/monitor_ontology_tree_service.sh
+SyslogIdentifier=Diskutilization
+#ExecStop=
+
+[Install]
+WantedBy=multi-user.target
